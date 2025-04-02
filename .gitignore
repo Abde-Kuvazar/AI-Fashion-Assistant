@@ -1,2 +1,3 @@
-backend/stable_diffusion_models/ 
 node_modules/ 
+backend/stable_diffusion_models/ 
+backend/stable_diffusion_models/* 
