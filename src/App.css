@@ -1,0 +1,80 @@
+/* App.css */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #ffecd2, #fcb69f);
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App {
+  text-align: center;
+  background: #fff;
+  padding: 30px;
+  width: 500px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+  color: #ff7e5f;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 2px solid #ff7e5f;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #ff4b2b;
+  box-shadow: 0 0 10px rgba(255, 123, 95, 0.5);
+}
+
+button {
+  background: linear-gradient(to right, #ff4b2b, #ff7e5f);
+  color: #fff;
+  padding: 12px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(255, 123, 95, 0.5);
+}
+
+img {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

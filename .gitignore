@@ -1,0 +1,20 @@
+# Ignore virtual environment
+venv/
+
+# Ignore backend model weights and large files
+backend/model_weights/
+backend/__pycache__/
+backend/*.pth
+backend/*.pt
+backend/*.ckpt
+backend/*.safetensors
+
+# Ignore frontend dependencies
+frontend/node_modules/
+frontend/.next/
+frontend/.parcel-cache/
+
+# Ignore unnecessary system files
+.DS_Store
+Thumbs.db
+*.log
