@@ -1,6 +1,8 @@
 # Ignore virtual environment
 venv/
 
+node_modules/
+
 # Ignore backend model weights and large files
 backend/model_weights/
 backend/__pycache__/
