@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+Generative AI for Fashion Design
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Text2Fashion** is a lightweight yet research-driven GenAI project that transforms *natural language outfit descriptions* into realistic **fashion images**.  
+The system integrates **Stable Diffusion XL**, **ControlNet**, and **IP-Adapter** pipelines locally to ensure controllable, high-quality image synthesis — all running on CPU/GPU with minimal dependencies.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## ✨ Overview
 
-### `npm start`
+> “Describe it, See it.”
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Text2Fashion bridges creativity and machine intelligence.  
+Users can describe an outfit — e.g., *“black velvet blazer with gold embroidery, runway lighting, formal look”* — and the system generates a corresponding realistic fashion image.  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The project aims to make **AI-assisted fashion prototyping** accessible and fast for designers, brands, and researchers.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🧠 Core Technologies
 
-### `npm run build`
+| Component | Description |
+|------------|-------------|
+| **Stable Diffusion XL (SDXL)** | High-resolution text-to-image generation pipeline. |
+| **ControlNet** | Structural guidance for pose, edges, and garment layout. |
+| **IP-Adapter** | Image prompt adapter for better style and composition consistency. |
+| **Flask** | Lightweight backend framework for serving local models and web UI. |
+| **Gradio-inspired UI** | Clean, responsive interface for interactive text-to-image generation. |
+| **Pillow / OpenCV** | Image decoding, post-processing, and visualization. |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## ⚙️ Architecture
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+User Prompt
+↓
+Text Encoder (CLIP / OpenCLIP)
+↓
+Stable Diffusion XL Pipeline
+↙︎ ↘︎
+ControlNet IP-Adapter
+↓ ↓
+Feature Fusion & Denoising
+↓
+Generated Fashion Image
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 💡 Features
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- 🪄 **Text-to-Fashion Image Generation** — generate realistic outfit visuals from simple text prompts.  
+- 🧍 **ControlNet Guidance** — preserve body structure or pose when desired.  
+- 🎨 **IP-Adapter Consistency** — achieve stylistic coherence across multiple images.  
+- 🧵 **Automatic Palette Extraction** — show dominant colors and tones in the generated look.  
+- 🪞 **Style & Accessory Suggestions** — basic NLP-based suggestions for accessories or complementary garments.  
+- 🖼️ **Variation Gallery** — view and switch between multiple generated looks.  
+- 💾 **Download & Lookbook Mode** — save generated outfits as images for portfolio building.  
+- 🌈 **Modern UI** — Aesthetic, trendy, glassmorphic interface built with responsive CSS.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+🧬 Model Components (Local)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Stable Diffusion XL (weights loaded via diffusers)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+ControlNet for edge/pose conditioning (optional)
 
-### Code Splitting
+IP-Adapter for maintaining consistent fashion style
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Autoencoder KL from SDXL for efficient image decoding
 
-### Analyzing the Bundle Size
+All models are locally cached from the Hugging Face model hub or pre-downloaded and stored under
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<img width="1844" height="912" alt="Screenshot 2025-11-11 163243" src="https://github.com/user-attachments/assets/48dad07d-1481-461b-a6d2-f1d192929b8c" />
 
-### Making a Progressive Web App
+<img width="1869" height="905" alt="Screenshot 2025-11-11 163306" src="https://github.com/user-attachments/assets/b816fdf7-e331-41e4-b294-43701c23c51f" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
